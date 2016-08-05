@@ -1,11 +1,11 @@
 .PHONY : ALL
-ALL :  e1.1 echo1 echo2 echo3 echo4 helloworld
+ALL :  e1.1 e1.2 echo2 echo3 echo4 helloworld
 
 e1.1 :
 	go build e1.1.go
 
-echo1 :
-	go build echo1.go
+e1.2 :
+	go build e1.2.go
 
 echo2 :
 	go build echo2.go
@@ -21,4 +21,4 @@ helloworld :
 
 .PHONY : clean
 clean:
-	rm -rf  e1.1 echo1 echo2 echo3 echo4 helloworld
+	rm -rf  e1.1 e1.2 echo2 echo3 echo4 helloworld
