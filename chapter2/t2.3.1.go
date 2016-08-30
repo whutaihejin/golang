@@ -14,5 +14,6 @@ func main() {
 	m, n := 8, 9
 	fmt.Printf("m=%d, n=%d\n", m, n)
 	// m, n := 11, 22 // no new variables on left side of :=
+	m, n = 11, 22
 	fmt.Printf("m=%d, n=%d\n", m, n)
 }
