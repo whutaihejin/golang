@@ -1,8 +1,10 @@
 .PHONY : ALL
-ALL :  goconfig t4.1 t4.3
+ALL :  goconfig gofile t4.1 t4.3
 
 goconfig:
 	go build goconfig.go
+gofile:
+	go build gofile.go
 t4.1:
 	go build t4.1.go
 t4.3:
@@ -10,4 +12,4 @@ t4.3:
 
 .PHONY : clean
 clean :
-	 rm -rf  goconfig t4.1 t4.3
+	 rm -rf  goconfig gofile t4.1 t4.3
