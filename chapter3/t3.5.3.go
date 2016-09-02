@@ -47,4 +47,13 @@ func main() {
 	}
 	fmt.Printf("n=%d\n", n)
 	fmt.Printf("n=%d\n", utf8.RuneCountInString(s))
+
+	name := "世界"
+	fmt.Printf("% x \n", name)
+	runeName := []rune(name)
+	fmt.Printf("%x\n", runeName)
+	fmt.Println(string(runeName))
+	fmt.Println(string(65))
+	fmt.Println(string(0x4eac))
+	fmt.Println(string(1234567))
 }
