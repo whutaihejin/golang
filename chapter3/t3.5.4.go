@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 import "strings"
+import "bytes"
 
 func main() {
 	fmt.Printf("%s %s\n", "a/b/c.go", basename("a/b/c.go"))
@@ -14,6 +15,22 @@ func main() {
 	fmt.Println(comma("12345"))
 	fmt.Println(comma("123456"))
 	fmt.Println(comma("1234567"))
+
+	s := "taihein"
+	b := []byte(s)
+	s2 := string(b)
+	fmt.Println(s)
+	fmt.Println(s2)
+
+	fmt.Printf("Contains(taihejin, hejin) %t\n", strings.Contains("taihejin", "hejin"))
+	fmt.Printf("Count(hello hello world hello, hello) %d\n", strings.Count("hello hello world hello", "hello"))
+	fields := strings.Fields("hello world")
+	fmt.Println(len(fields), fields)
+	fmt.Println(strings.HasPrefix("taihejin", "tai"))
+	fmt.Println(strings.Index("hello my name is", "my"))
+	fmt.Println(strings.Join([]string{"hello", "taihejin", "tomhanks"}, "#"))
+
+	fmt.Println(toString([]int{1, 2, 3}))
 }
 
 func basenameV1(s string) string {
@@ -47,4 +64,17 @@ func comma(s string) string {
 		return s
 	}
 	return comma(s[:n-3]) + "," + s[n-3:]
+}
+
+func toString(nums []int) string {
+	var buf bytes.Buffer
+	buf.WriteByte('[')
+	for i, v := range nums {
+		if i > 0 {
+			buf.WriteString(",")
+		}
+		fmt.Fprintf(&buf, "%d", v)
+	}
+	buf.WriteByte(']')
+	return buf.String()
 }
