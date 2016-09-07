@@ -51,4 +51,16 @@ func main() {
 	//
 	var bookNil Book
 	fmt.Println(bookNil)
+
+	//
+	fmt.Println("array test ===")
+	arr := []Book{{1, 1, 1}, {5, 5, 5}}
+	for i, book := range arr {
+		fmt.Println(book)
+		book.shift()
+		arr[i] = book
+	}
+	for _, book := range arr {
+		fmt.Println(book)
+	}
 }

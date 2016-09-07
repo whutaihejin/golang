@@ -1,6 +1,8 @@
 .PHONY : ALL
-ALL :  t3.5.1 t3.5.3 t3.5.4 t3.5.5 t3.5 t3.6.1 t3.6
+ALL :  t3.1 t3.5.1 t3.5.3 t3.5.4 t3.5.5 t3.5 t3.6.1 t3.6
 
+t3.1:
+	go build t3.1.go
 t3.5.1:
 	go build t3.5.1.go
 t3.5.3:
@@ -18,4 +20,4 @@ t3.6:
 
 .PHONY : clean
 clean :
-	 rm -rf  t3.5.1 t3.5.3 t3.5.4 t3.5.5 t3.5 t3.6.1 t3.6
+	 rm -rf  t3.1 t3.5.1 t3.5.3 t3.5.4 t3.5.5 t3.5 t3.6.1 t3.6
